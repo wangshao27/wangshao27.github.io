@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>书剑阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="书剑阁">
+  <title>linux基础 第一天 安全术语 | 书剑阁</title>
+  <meta name="keywords" content=" 安全术语 , 渗透流程 ">
+  <meta name="description" content="linux基础 第一天 安全术语 | 书剑阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="前言linuxapache环境搭建mysql即mariadb数据库php环境搭建1、执行下面的命令升级软件数据库rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm如果出现下面的错误，先执行： yu">
 <meta name="keywords" content="LAMP">
@@ -55,7 +55,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -416,12 +416,59 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-北京渗透测试第一天 20190716" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">linux基础 第一天 安全术语</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="渗透">渗透</a>/
+            
+                <a href="javascript:" data-rel="第一周">第一周</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">安全术语</a>
+            
+            <a href="javascript:" class="color5">渗透流程</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-07-28 20:43:33'>2019-07-27 10:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安全圈术语"><span class="toc-text">安全圈术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、肉鸡"><span class="toc-text">1、肉鸡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、弱口令"><span class="toc-text">2、弱口令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Webshell"><span class="toc-text">3、Webshell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、Powershell"><span class="toc-text">4、Powershell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、木马"><span class="toc-text">5、木马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、注入点"><span class="toc-text">6、注入点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、上传点"><span class="toc-text">7、上传点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、后门"><span class="toc-text">8、后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、内网"><span class="toc-text">9、内网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、外网"><span class="toc-text">10、外网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、端口"><span class="toc-text">11、端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、远控"><span class="toc-text">12、远控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、免杀"><span class="toc-text">13、免杀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、提权"><span class="toc-text">14、提权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试种类"><span class="toc-text">测试种类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#白盒测试"><span class="toc-text">白盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#黑盒测试"><span class="toc-text">黑盒测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#渗透测试流程"><span class="toc-text">渗透测试流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、信息搜集"><span class="toc-text">1、信息搜集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、威胁建模"><span class="toc-text">2、威胁建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、渗透测试"><span class="toc-text">3、渗透测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、后渗透测试"><span class="toc-text">4、后渗透测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#渗透测试工具"><span class="toc-text">渗透测试工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、信息搜集类"><span class="toc-text">1、信息搜集类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、漏洞扫描类"><span class="toc-text">2、漏洞扫描类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、漏洞利用类"><span class="toc-text">3、漏洞利用类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、综合平台类"><span class="toc-text">4、综合平台类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-hacking语法"><span class="toc-text">Google hacking语法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -434,36 +481,92 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安全圈术语"><a href="#安全圈术语" class="headerlink" title="安全圈术语"></a>安全圈术语</h2><h3 id="1、肉鸡"><a href="#1、肉鸡" class="headerlink" title="1、肉鸡"></a>1、肉鸡</h3><pre><code class="bash">$ 指可以随意被黑客控制的电脑</code></pre>
+<h3 id="2、弱口令"><a href="#2、弱口令" class="headerlink" title="2、弱口令"></a>2、弱口令</h3><pre><code class="bash">$ 指强度不够，容易被猜解的口令</code></pre>
+<h3 id="3、Webshell"><a href="#3、Webshell" class="headerlink" title="3、Webshell"></a>3、Webshell</h3><pre><code class="bash">$ 指入侵web的脚本攻击工具</code></pre>
+<h3 id="4、Powershell"><a href="#4、Powershell" class="headerlink" title="4、Powershell"></a>4、Powershell</h3><pre><code class="bash">$ 微软下的相当于cmd的系统管理工具</code></pre>
+<h3 id="5、木马"><a href="#5、木马" class="headerlink" title="5、木马"></a>5、木马</h3><pre><code class="bash">$          指会悄悄获取系统控制权限的程序，隐藏性高
+$ 病毒: 指会破坏电脑的程序</code></pre>
+<h3 id="6、注入点"><a href="#6、注入点" class="headerlink" title="6、注入点"></a>6、注入点</h3><pre><code class="bash">$ 指可执行sql语句的地方</code></pre>
+<h3 id="7、上传点"><a href="#7、上传点" class="headerlink" title="7、上传点"></a>7、上传点</h3><pre><code class="bash">$ 指可以上传文件的地方</code></pre>
+<h3 id="8、后门"><a href="#8、后门" class="headerlink" title="8、后门"></a>8、后门</h3><pre><code class="bash">$ 指入侵者留在系统中，供入侵者持续访问的隐蔽程序</code></pre>
+<h3 id="9、内网"><a href="#9、内网" class="headerlink" title="9、内网"></a>9、内网</h3><pre><code class="bash">$ hexo deploy</code></pre>
+<h3 id="10、外网"><a href="#10、外网" class="headerlink" title="10、外网"></a>10、外网</h3><pre><code class="bash">$ 指直接连入INTERNET（互连网）</code></pre>
+<h3 id="11、端口"><a href="#11、端口" class="headerlink" title="11、端口"></a>11、端口</h3><pre><code class="bash">$ 指计算机与外界进行数据交流的出口</code></pre>
+<h3 id="12、远控"><a href="#12、远控" class="headerlink" title="12、远控"></a>12、远控</h3><pre><code class="bash">$ 指远程控制目标电脑的技术</code></pre>
+<h3 id="13、免杀"><a href="#13、免杀" class="headerlink" title="13、免杀"></a>13、免杀</h3><pre><code class="bash">$ 指能使病毒木马避免被杀毒软件查杀的技术</code></pre>
+<h3 id="14、提权"><a href="#14、提权" class="headerlink" title="14、提权"></a>14、提权</h3><pre><code class="bash">$ 指低权限的账户提升到管理员权限的方法</code></pre>
+<h2 id="测试种类"><a href="#测试种类" class="headerlink" title="测试种类"></a>测试种类</h2><h3 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h3><pre><code class="bash">    从内部通过代码审计对内部的程序部署，
+应用，代码，列表等，来检测计算机安全风险</code></pre>
+<h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><pre><code class="python">    从外部，通过模拟黑客手段来评估计算机
+内部的安全风险。</code></pre>
+<p><img src="ceshi.png" alt="2"></p>
+<h2 id="渗透测试流程"><a href="#渗透测试流程" class="headerlink" title="渗透测试流程"></a>渗透测试流程</h2><h3 id="1、信息搜集"><a href="#1、信息搜集" class="headerlink" title="1、信息搜集"></a>1、信息搜集</h3><pre><code class="bash">    搜集相关信息，真IP，子域名，资产（使用什么编程语言，
+用什么数据库配置，用的什么应用及开放的端口等）</code></pre>
+<h3 id="2、威胁建模"><a href="#2、威胁建模" class="headerlink" title="2、威胁建模"></a>2、威胁建模</h3><pre><code class="python">   对所搜集到的信息，进行分析和搭建
+（如：win2008+apache +mysql5.0+php5.0 ）</code></pre>
+<h3 id="3、渗透测试"><a href="#3、渗透测试" class="headerlink" title="3、渗透测试"></a>3、渗透测试</h3><pre><code class="bash">    对研究后得到的结果，进行渗透测试，获得getshell
+踢开门，入侵系统，找到目标所在</code></pre>
+<h3 id="4、后渗透测试"><a href="#4、后渗透测试" class="headerlink" title="4、后渗透测试"></a>4、后渗透测试</h3><pre><code class="python">   渗透测试根据业务需求，对业主分析，根据资产与安全
+防御的不同点，自主设计出攻击目标，最终能够组合对客户
+组造成最大业务影响的攻击途径 </code></pre>
+<h2 id="渗透测试工具"><a href="#渗透测试工具" class="headerlink" title="渗透测试工具"></a>渗透测试工具</h2><h3 id="1、信息搜集类"><a href="#1、信息搜集类" class="headerlink" title="1、信息搜集类"></a>1、信息搜集类</h3><pre><code class="bash">    Nmap（端口扫描）    
+    御剑（后台扫描）   
+    google hack（语法）   
+    maltego（数字取证） 
+    whois（站长之家） 
+    kali  linux</code></pre>
+<h3 id="2、漏洞扫描类"><a href="#2、漏洞扫描类" class="headerlink" title="2、漏洞扫描类"></a>2、漏洞扫描类</h3><pre><code class="python">    Awvs（安全测试工具）             
+    H3C webScan（企业内网）           
+    AppScan（漏洞扫描评估）   
+    Netsparker（安全漏洞扫描）    
+    Nessus（扫描端口漏洞很厉害）     
+    巡风（内网，漏洞应急扫描）</code></pre>
+<h3 id="3、漏洞利用类"><a href="#3、漏洞利用类" class="headerlink" title="3、漏洞利用类"></a>3、漏洞利用类</h3><pre><code class="bash">    中国菜刀（网站管理软件）         
+    sqlmap（sql注入工具加扫描）           
+    啊D（access的利用）</code></pre>
+<h3 id="4、综合平台类"><a href="#4、综合平台类" class="headerlink" title="4、综合平台类"></a>4、综合平台类</h3><pre><code class="python">   Burpsuit（攻击web的集成平台）    
+   Measploit（安全漏洞扫描工具）主要用于：内网，端口，缓冲区溢出</code></pre>
+<h2 id="Google-hacking语法"><a href="#Google-hacking语法" class="headerlink" title="Google hacking语法"></a>Google hacking语法</h2><pre><code class="python">inurl  搜索位于url中的文字
+filetype  文件类型
+intext：网页内容
+intitle 标题 中的文字
+site：定位域名</code></pre>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>linux基础 第一天 安全术语</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-27, 10:49:28</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-28, 20:43:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/北京渗透测试第一天 20190716/" title="linux基础 第一天 安全术语">http://yoursite.com/2019/07/27/北京渗透测试第一天 20190716/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 wang</p>
