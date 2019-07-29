@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>linux基础 第二天 学习计划 | 书剑阁</title>
-  <meta name="keywords" content=" 学习计划 , 静态网络配置 ">
-  <meta name="description" content="linux基础 第二天 学习计划 | 书剑阁">
+  <title>前端认识 第十天 | 书剑阁</title>
+  <meta name="keywords" content=" 文件包含漏洞 , vpn ">
+  <meta name="description" content="前端认识 第十天 | 书剑阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -436,9 +436,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-北京渗透测试第二天 20190717" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-北京渗透测试第十天 20190729" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">linux基础 第二天 学习计划</h1>
+        <h1 class="article-title">前端认识 第十天</h1>
     
     <div class="article-meta">
         
@@ -448,23 +448,23 @@
             
                 <a href="javascript:" data-rel="渗透">渗透</a>/
             
-                <a href="javascript:" data-rel="第一周">第一周</a>
+                <a href="javascript:" data-rel="第三周">第三周</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">学习计划</a>
+            <a href="javascript:" class="color2">文件包含漏洞</a>
             
-            <a href="javascript:" class="color2">静态网络配置</a>
+            <a href="javascript:" class="color4">vpn</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-28 20:11:18'>2019-07-27 15:48</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-29 19:15:46'>2019-07-29 13:05</time>
         
     </div>
     <div class="article-meta">
@@ -486,7 +486,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、学习计划"><span class="toc-text">1、学习计划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、系统分两类-类unix-和-windows"><span class="toc-text">2、系统分两类 类unix 和 windows</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、unix"><span class="toc-text">1、unix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、windows"><span class="toc-text">2、windows</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、命令行"><span class="toc-text">3、命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#su"><span class="toc-text">su</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sudo"><span class="toc-text">sudo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pws"><span class="toc-text">pws</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#whoami"><span class="toc-text">whoami</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd"><span class="toc-text">cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vi-vim-创建并编辑文件-在root权限下创建"><span class="toc-text">vi/vim ,创建并编辑文件(在root权限下创建)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig"><span class="toc-text">ifconfig</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS7，静态IP配置"><span class="toc-text">CentOS7，静态IP配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、内网配置"><span class="toc-text">1、内网配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、外网配置"><span class="toc-text">2、外网配置</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-php文件包含漏洞"><span class="toc-text">0x01 php文件包含漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-text">基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-windows搭建VPN"><span class="toc-text">0x02 windows搭建VPN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-Dockor"><span class="toc-text">0x03 Dockor</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -501,35 +501,12 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、学习计划"><a href="#1、学习计划" class="headerlink" title="1、学习计划"></a>1、学习计划</h2><pre><code class="bash">    1、基础学习（linux，php基础，mysql，搭建博客等）1到2两周 第一阶段
-    2、php语言学习 第3周到第4周 第二阶段
-    3、web安全与渗透测试学习 5到14周 第三阶段
-    4、拓展能力（代码审计，python开发）15到16 第四阶段</code></pre>
-<h2 id="2、系统分两类-类unix-和-windows"><a href="#2、系统分两类-类unix-和-windows" class="headerlink" title="2、系统分两类 类unix 和 windows"></a>2、系统分两类 类unix 和 windows</h2><h3 id="1、unix"><a href="#1、unix" class="headerlink" title="1、unix"></a>1、unix</h3><pre><code class="bash">    以Linux为核心的延伸，CentOS Redhat的红帽系统
-Debian  以及Ubuntu又是两大类，老爹是Debian</code></pre>
-<h3 id="2、windows"><a href="#2、windows" class="headerlink" title="2、windows"></a>2、windows</h3><pre><code class="bash">    windows 最早是windows me后来发展出来95 97 98 2000 NT XP
-及对应的2003服务系统</code></pre>
-<h2 id="3、命令行"><a href="#3、命令行" class="headerlink" title="3、命令行"></a>3、命令行</h2><h3 id="su"><a href="#su" class="headerlink" title="su"></a>su</h3><pre><code class="bash">    [root@Blackghost ~] su zhangying              #切换用户，原用户环境变量</code></pre>
-<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><pre><code class="bash">    [wang@Blackghost ~] sudo useradd liang        #在普通账户下，通过sudo执行root用户权限</code></pre>
-<h3 id="pws"><a href="#pws" class="headerlink" title="pws"></a>pws</h3><pre><code class="bash">    [root@rudder home]# pwd  #显示当前目录
-    /home</code></pre>
-<h3 id="whoami"><a href="#whoami" class="headerlink" title="whoami"></a>whoami</h3><pre><code class="bash">    [root@rudder home]# whoami  #显示当前用户
-    /root</code></pre>
-<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><pre><code class="bash">    cd 进入某一目录  +  ../  则向上一级</code></pre>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><pre><code class="bash">    [root@rudder home]# mkdir t #创建文件夹
-    [root@localhost ~]# mkdir -p 111/abc   #创建目录，父目录存在，建之,递归创建文件夹</code></pre>
-<h3 id="vi-vim-创建并编辑文件-在root权限下创建"><a href="#vi-vim-创建并编辑文件-在root权限下创建" class="headerlink" title="vi/vim ,创建并编辑文件(在root权限下创建)"></a>vi/vim ,创建并编辑文件(在root权限下创建)</h3><pre><code class="bash">    i：插入编辑
-    w：保存
-    q：退出
-    !: 强制执行</code></pre>
-<h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><pre><code class="bash">    ifconfig ：查看当前网卡信息 = ipconfig</code></pre>
-<h2 id="CentOS7，静态IP配置"><a href="#CentOS7，静态IP配置" class="headerlink" title="CentOS7，静态IP配置"></a>CentOS7，静态IP配置</h2><h3 id="1、内网配置"><a href="#1、内网配置" class="headerlink" title="1、内网配置"></a>1、内网配置</h3><pre><code>    进入root用户
-    cd /etc/sysconfig/network-script/
-    找到网卡配置文件，再用vim ifcfg-eno******更改配置
-[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></pre><p><img src="1.png" alt="1,静态配置操作"></p>
-<pre><code>更改配置后，网卡重启执行:
-service network restart  或者 systemctl restart network</code></pre><h3 id="2、外网配置"><a href="#2、外网配置" class="headerlink" title="2、外网配置"></a>2、外网配置</h3><pre><code>内网连通后，设置外网，</code></pre><p><img src="2.png" alt="2,外网配置操作"></p>
-
+        <blockquote>
+<h2 id="0x01-php文件包含漏洞"><a href="#0x01-php文件包含漏洞" class="headerlink" title="0x01 php文件包含漏洞"></a>0x01 php文件包含漏洞</h2></blockquote>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre><code>&gt;SElinux是linux的增强型，里面有很多设置不利于做渗透测试的修改
+需要封堵SElinux的功能：进入 /etc/sysconfig/selinux</code></pre><p><img src="1.png" alt="selinux操作"></p>
+<h2 id="0x02-windows搭建VPN"><a href="#0x02-windows搭建VPN" class="headerlink" title="0x02 windows搭建VPN"></a>0x02 windows搭建VPN</h2><p>###</p>
+<h2 id="0x03-Dockor"><a href="#0x03-Dockor" class="headerlink" title="0x03 Dockor"></a>0x03 Dockor</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
     </div>
@@ -542,12 +519,12 @@ service network restart  或者 systemctl restart network</code></pre><h3 id="2�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>linux基础 第二天 学习计划</p>
+    <p><span class="copy-title">文章标题:</span>前端认识 第十天</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-27, 15:48:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-28, 20:11:18</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/北京渗透测试第二天 20190717/" title="linux基础 第二天 学习计划">http://yoursite.com/2019/07/27/北京渗透测试第二天 20190717/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-29, 13:05:16</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-29, 19:15:46</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/29/北京渗透测试第十天 20190729/" title="前端认识 第十天">http://yoursite.com/2019/07/29/北京渗透测试第十天 20190729/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
