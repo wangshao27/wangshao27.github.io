@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>书剑阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="书剑阁">
+  <title>linux基础 第四天 linux根目录 | 书剑阁</title>
+  <meta name="keywords" content=" linux根目录 , 命令补充 ">
+  <meta name="description" content="linux基础 第四天 linux根目录 | 书剑阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -49,7 +49,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -458,12 +458,59 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-北京渗透测试第四天 20190719" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">linux基础 第四天 linux根目录</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="渗透">渗透</a>/
+            
+                <a href="javascript:" data-rel="第一周">第一周</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">linux根目录</a>
+            
+            <a href="javascript:" class="color5">命令补充</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-07-28 22:06:24'>2019-07-28 20:12</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、补充命令"><span class="toc-text">1、补充命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getent"><span class="toc-text">getent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwunconv"><span class="toc-text">pwunconv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwconv"><span class="toc-text">pwconv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、bin与sbin的区别"><span class="toc-text">2、bin与sbin的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-bin与-usr-bin的区别如下"><span class="toc-text">1、/bin与/usr/bin的区别如下:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-bin与-sbin目录所放置执行文件的区别："><span class="toc-text">2、/bin与/sbin目录所放置执行文件的区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、每个文件具体放置命令如下："><span class="toc-text">3、每个文件具体放置命令如下：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Linux目录结构及功能："><span class="toc-text">3、Linux目录结构及功能：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、主副组"><span class="toc-text">4、主副组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#id-用户名"><span class="toc-text">id 用户名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#passwd"><span class="toc-text">passwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadow"><span class="toc-text">shadow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#group"><span class="toc-text">group</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、linux-根目录解析"><span class="toc-text">5、linux 根目录解析</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -476,36 +523,81 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、补充命令"><a href="#1、补充命令" class="headerlink" title="1、补充命令"></a>1、补充命令</h2><h3 id="getent"><a href="#getent" class="headerlink" title="getent"></a>getent</h3><p>命令格式：newgrp<br>主要功能：用于登入另一个群组<br>常用参数：无<br>命令示例：</p>
+<pre><code># getent passwd 用户名 #（用来察看系统的数据库相关记录）</code></pre><h3 id="pwunconv"><a href="#pwunconv" class="headerlink" title="pwunconv"></a>pwunconv</h3><p>命令格式：pwunconv<br>主要功能：用来关闭用户的投影密码<br>常用参数：无<br>命令示例：</p>
+<pre><code># pwunconv  #关闭当前用户密码
+# cat /etc/passwd | grep test  #发现密码已经在passwd文件中了 
+test:$6$nYOEWamm$bz07nlv/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdfjksyuyAFDPIngZeD3cgcf.0:3001:3001::/home/test:/bin/sh 
+# ls /etc/shadow     #查看影子文件，提示没有这个文件或目录 
+ls: cannot access /etc/shadow: No such file or directory</code></pre><h3 id="pwconv"><a href="#pwconv" class="headerlink" title="pwconv"></a>pwconv</h3><p>命令格式：pwconv<br>主要功能：用来开启用户的投影密码<br>常用参数：无<br>命令示例：</p>
+<pre><code># cat /etc/passwd | grep test 
+# test:x:3001:3001::/home/test:/bin/sh  
+此时可以发现密码段是x 
+# pwconv
+# cat /etc/shadow | grep test 
+# test:$6$nYOEWamm$bz07nlv/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdfjksyuyAFDPIngZeD3cgcf.0:15022:0:99999:7:::</code></pre><h2 id="2、bin与sbin的区别"><a href="#2、bin与sbin的区别" class="headerlink" title="2、bin与sbin的区别"></a>2、bin与sbin的区别</h2><pre><code>    在根目录下使用l查看，可以看到/bin/sbin其实是
+/usr/bin/usr/bin的链接文件。一眼看去好像没什么区别，
+但区别还是有的。
+|hrwxrwxrwx.1 root root 7 7月1602：18bin-&gt;usr/bin
+Ilrwxrwxrwx.1 root root 8 7月1602：18 sbin-&gt;usr/sbin</code></pre><h3 id="1、-bin与-usr-bin的区别如下"><a href="#1、-bin与-usr-bin的区别如下" class="headerlink" title="1、/bin与/usr/bin的区别如下:"></a>1、/bin与/usr/bin的区别如下:</h3><pre><code>    /bin下是系统通用的命令，/usr/bin下多是该用户可用的命令。</code></pre><h3 id="2、-bin与-sbin目录所放置执行文件的区别："><a href="#2、-bin与-sbin目录所放置执行文件的区别：" class="headerlink" title="2、/bin与/sbin目录所放置执行文件的区别："></a>2、/bin与/sbin目录所放置执行文件的区别：</h3><pre><code>    /bin放置的是一般用户惯用的指令，至于/sbin则是系统管理员才能使用的指令。</code></pre><h3 id="3、每个文件具体放置命令如下："><a href="#3、每个文件具体放置命令如下：" class="headerlink" title="3、每个文件具体放置命令如下："></a>3、每个文件具体放置命令如下：</h3><pre><code>bin：
+bin为binary的简写，主要放置系统的必备执行文件，例如：|
+cat，cp，chmod，df demesg，gzip，kill，ls，mkdir，more，mount，rm，su，tar等
+/usr/bin：
+主要放置应用程序工具的必备执行文件，例如：
+C++，g++，gcC，chdrv，dig，du，eject等
+/sbin：
+主要放置系统管理的必备程序，例如：
+Cfdisk，dhcpcd，dump，e2fsck，fdisk，halt等
+/usr/bin：
+主要放置网路管理的必备程序</code></pre><h2 id="3、Linux目录结构及功能："><a href="#3、Linux目录结构及功能：" class="headerlink" title="3、Linux目录结构及功能："></a>3、Linux目录结构及功能：</h2><pre><code>/Dev 存放抽象的硬件文件，
+/Boot 存放内核与启动文件
+/lib 存放系统文件
+/bin 存放可执行的二进制文件（即普通用户）
+/sbin 存放有特权的二进制文件（root特权账户）
+/usr 存放安装程序（软件的默认目录）
+/var 存放经常变化的文件
+/mnt 文件挂载目录（u盘，光驱）
+/home 普通用户目录
+/root 特权用户目录</code></pre><h2 id="4、主副组"><a href="#4、主副组" class="headerlink" title="4、主副组"></a>4、主副组</h2><h3 id="id-用户名"><a href="#id-用户名" class="headerlink" title="id 用户名"></a>id 用户名</h3><pre><code># id root #查看用户root的各种信息</code></pre><p><img src="1.png" alt="id,输出"></p>
+<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><pre><code># cat /etc/passwd #查看用户密码</code></pre><p><img src="2.png" alt="passwd,输出"></p>
+<h3 id="shadow"><a href="#shadow" class="headerlink" title="shadow"></a>shadow</h3><pre><code># cat /etc/shadow #查看用户密码</code></pre><p><img src="3.png" alt="shadow,输出"></p>
+<h3 id="group"><a href="#group" class="headerlink" title="group"></a>group</h3><pre><code># cat /etc/group #查看用户密码</code></pre><p><img src="4.png" alt="shadow,输出"></p>
+<h2 id="5、linux-根目录解析"><a href="#5、linux-根目录解析" class="headerlink" title="5、linux 根目录解析"></a>5、linux 根目录解析</h2><p><img src="5.jpg" alt="linux根目录"></p>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>linux基础 第四天 linux根目录</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-28, 20:12:15</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-28, 22:06:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/28/北京渗透测试第四天 20190719/" title="linux基础 第四天 linux根目录">http://yoursite.com/2019/07/28/北京渗透测试第四天 20190719/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 wang</p>

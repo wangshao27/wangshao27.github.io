@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>linux基础 第三天 基础命令 | 书剑阁</title>
+  <meta name="keywords" content=" 基础命令 ">
+  <meta name="description" content="linux基础 第三天 基础命令 | 书剑阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:site_name" content="书剑阁">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-27T02:17:23.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="about">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>弈少</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2020471535&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(11)</small></div></li>
+    
+        
+            
+            <li><div data-rel="渗透"><i class="fold iconfont icon-right"></i>渗透<small>(9)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="第二周">第二周<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第一周">第一周<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第三周">第三周<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://0xxk.github.io">0xxk</a></li>
+            
+            <li><a target="_blank" href="http://onezero.site">浮  鱼</a></li>
+            
+            <li><a target="_blank" href="http://conggeshizhendeshuai.github.io">王思聪</a></li>
+            
+            <li><a target="_blank" href="http://wanfeng98.cn">挽  风</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">linux基础考试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">安全术语</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">渗透流程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">LAMP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">sqli-labs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Dvwa</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">学习计划</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">静态网络配置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">文件包含漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">linux根目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">命令补充</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">基础命令</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2019/07/27/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-27 10:11:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/30/北京渗透测试linux阶段考试 20190730/"
+           data-tag="linux基础考试"
+           data-author="" >
+            <span class="post-title" title="linux基础考试 第十一天 考试总结">linux基础考试 第十一天 考试总结</span>
+            <span class="post-date" title="2019-07-30 11:58:52">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/27/北京渗透测试第一天 20190716/"
+           data-tag="安全术语,渗透流程"
+           data-author="" >
+            <span class="post-title" title="linux基础 第一天 安全术语">linux基础 第一天 安全术语</span>
+            <span class="post-date" title="2019-07-27 10:49:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/28/北京渗透测试第七天 20190724/"
+           data-tag="LAMP"
+           data-author="" >
+            <span class="post-title" title="环境搭建 第七天 LAMP">环境搭建 第七天 LAMP</span>
+            <span class="post-date" title="2019-07-28 23:17:09">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/28/北京渗透测试第二周，周末 20190728/"
+           data-tag="sqli-labs,Dvwa"
+           data-author="" >
+            <span class="post-title" title="第二周末作业 sqli-labs Dvwa">第二周末作业 sqli-labs Dvwa</span>
+            <span class="post-date" title="2019-07-28 22:34:30">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/27/北京渗透测试第二天 20190717/"
+           data-tag="学习计划,静态网络配置"
+           data-author="" >
+            <span class="post-title" title="linux基础 第二天 学习计划">linux基础 第二天 学习计划</span>
+            <span class="post-date" title="2019-07-27 15:48:46">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/30/北京渗透测试第十一天 20190730/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="html 第十一天 基础学习">html 第十一天 基础学习</span>
+            <span class="post-date" title="2019-07-30 20:25:08">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/29/北京渗透测试第十天 20190729/"
+           data-tag="文件包含漏洞,vpn"
+           data-author="" >
+            <span class="post-title" title="vpn和docker 第十天">vpn和docker 第十天</span>
+            <span class="post-date" title="2019-07-29 13:05:16">2019/07/29</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/28/北京渗透测试第四天 20190719/"
+           data-tag="linux根目录,命令补充"
+           data-author="" >
+            <span class="post-title" title="linux基础 第四天 linux根目录">linux基础 第四天 linux根目录</span>
+            <span class="post-date" title="2019-07-28 20:12:15">2019/07/28</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/永夜君王/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="永夜君王">永夜君王</span>
+            <span class="post-date" title="2019-07-27 10:11:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/28/北京渗透测试第三天 20190718/"
+           data-tag="基础命令"
+           data-author="" >
+            <span class="post-title" title="linux基础 第三天 基础命令">linux基础 第三天 基础命令</span>
+            <span class="post-date" title="2019-07-28 15:46:31">2019/07/28</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-北京渗透测试第三天 20190718" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">linux基础 第三天 基础命令</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="渗透">渗透</a>/
+            
+                <a href="javascript:" data-rel="第一周">第一周</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">基础命令</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-07-28 20:38:52'>2019-07-28 15:46</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、基础命令"><span class="toc-text">1、基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-List"><span class="toc-text">ls  List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-—-remove"><span class="toc-text">rm — remove</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-—-Make-Directory"><span class="toc-text">mkdir — Make Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-—-Copy"><span class="toc-text">cp — Copy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-—Print-Working-Directory"><span class="toc-text">pwd —Print Working Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-—-Chang-Directory"><span class="toc-text">cd — Chang Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cat-—-concatenate-and-print-files"><span class="toc-text">cat — concatenate and print files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more"><span class="toc-text">more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less"><span class="toc-text">less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps"><span class="toc-text">ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps-aux-grep-进程数（在所有进程下找目标进程）"><span class="toc-text">ps -aux | grep 进程数（在所有进程下找目标进程）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar"><span class="toc-text">tar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unzip"><span class="toc-text">unzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#whereis"><span class="toc-text">whereis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#which"><span class="toc-text">which</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping"><span class="toc-text">ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig"><span class="toc-text">ifconfig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chown"><span class="toc-text">chown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chmod"><span class="toc-text">chmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jobs"><span class="toc-text">jobs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bg"><span class="toc-text">bg%</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fg"><span class="toc-text">fg%</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nohub"><span class="toc-text">nohub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useradd"><span class="toc-text">useradd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#userdel"><span class="toc-text">userdel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usermod"><span class="toc-text">usermod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#groupadd"><span class="toc-text">groupadd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#groupdel"><span class="toc-text">groupdel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#groupmod"><span class="toc-text">groupmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#passwd"><span class="toc-text">passwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#newgrp"><span class="toc-text">newgrp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#whoami"><span class="toc-text">whoami</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、附加命令"><span class="toc-text">2、附加命令</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、基础命令"><a href="#1、基础命令" class="headerlink" title="1、基础命令"></a>1、基础命令</h2><h3 id="ls-List"><a href="#ls-List" class="headerlink" title="ls  List"></a>ls  List</h3><p>命令格式：ls [参数] [目录名]<br>主要功能：列出目标目录中所有子目录和文件夹<br>常用参数：<br>-a 列出目录下的所有文件，包括以.开头的隐藏文件<br>-l 列出文件的权限、所有者、文件大小等详细信息<br>-d 仅列出目录本身，而不是列出目录的文件数据<br>-h 将文件容量以轻易读的方式（GB,KB等）列出来<br>-R 连同子目录的内容一起（递归列出）<br>命令示例：</p>
+<pre><code>ls -l   #显示当前目录下所有信息
+ls -lR #以长数据串的形式列出当前目录下的所有文件</code></pre><h3 id="rm-—-remove"><a href="#rm-—-remove" class="headerlink" title="rm — remove"></a>rm — remove</h3><p>命令格式：rm [参数] [文件或目录]<br>主要功能：删除一个目录中的一个或多个文件或目录<br>常用参数：<br>-f 强制删除，不会出现警告消息<br>-r 递归删除，常用于目录删除<br>-v 详细显示进行的步骤</p>
+<pre><code class="bash">    rm test.txt    #删除test.txt文件
+    rm -f test.txt #强制删除test.txt文件
+    rm -rf qwa    #强制删除文件夹，及mkdir创建的文件夹</code></pre>
+<h3 id="mkdir-—-Make-Directory"><a href="#mkdir-—-Make-Directory" class="headerlink" title="mkdir — Make Directory"></a>mkdir — Make Directory</h3><p>命令格式：mkdir [参数] [目录]<br>主要功能：在指定位置创建指定的文件夹或目录<br>常用参数：<br>-p ：建立多级目录<br>命令示例：</p>
+<pre><code class="bash">    mkdir demo            #建立demo文件夹
+    mkdir -p /demo1/demo2 #建立多级目录/demo1/demo2</code></pre>
+<h3 id="cp-—-Copy"><a href="#cp-—-Copy" class="headerlink" title="cp — Copy"></a>cp — Copy</h3><p>命令格式：cp [参数] [目录]<br>主要功能：将源文件复制至目标文件，或将多个源文件复制至目标目录<br>常用参数：<br>-R ：复制目录及目录内的所有项目<br>命令示例：</p>
+<pre><code class="bash">    cp demo /etc     #复制demo.txt文件到/etc目录
+    cp -R /demo /opt #复制/demo目录下的所有项目到/opt目录下</code></pre>
+<h3 id="pwd-—Print-Working-Directory"><a href="#pwd-—Print-Working-Directory" class="headerlink" title="pwd —Print Working Directory"></a>pwd —Print Working Directory</h3><p>命令格式：pwd [参数]<br>主要功能：查看当前工作目录的完整路径<br>常用参数：<br>一般情况下不带任何参数<br>命令示例：无</p>
+<h3 id="cd-—-Chang-Directory"><a href="#cd-—-Chang-Directory" class="headerlink" title="cd — Chang Directory"></a>cd — Chang Directory</h3><p>命令格式：cd [目录名]<br>主要功能：切换当前目录至dirName<br>常用参数：<br>一般情况下不带任何参数<br>命令示例：</p>
+<pre><code>cd /      #切换路径为系统根目录
+cd ~admin #切换到admin用户主目录
+cd ..     #切换到上一层目录
+cd -      #切换到进入此目录之前所在的目录</code></pre><h3 id="cat-—-concatenate-and-print-files"><a href="#cat-—-concatenate-and-print-files" class="headerlink" title="cat — concatenate and print files"></a>cat — concatenate and print files</h3><p>命令格式：cat [参数] [文件]<br>主要功能：查看文件内容<br>常用参数：<br>-n 在输出行前加上行号<br>命令示例：</p>
+<pre><code>cat log.log  #查看log.log文件内容</code></pre><h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>命令格式：more [参数] [文件]<br>主要功能：查看文件内容<br>常用参数：<br>-n 在输出行前加上行号<br>命令示例：</p>
+<pre><code>more test.php  #查看test.phpn内容</code></pre><h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p>命令格式：less [参数] [文件]<br>主要功能：按页来翻看文件的内容<br>常用参数：<br>-m 显示类似more命令的百分比<br>-N 显示每行的行号<br>-o 保存输出的内容<br>命令示例：无</p>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>命令格式：grep [参数] [文件]<br>主要功能：用于过滤/搜索的特定字符<br>常用参数：略<br>命令示例：</p>
+<pre><code>grep &#39;hello&#39; test.txt #在test.txt中查找关键词‘hello’</code></pre><h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>命令格式：ps [参数] [文件]<br>主要功能：显示所有进程<br>常用参数：<br>-e 　此参数的效果和指定”A”参数相同。<br> e 　列出进程时，显示每个进程所使用的环境变量。<br>-a   显示所有终端机下执行的进程，除了阶段作业领导者之外。<br> a   显示现行终端机下的所有进程，包括其他用户的进程。<br> a:  显示所有程序<br> u:  以用户为主的格式来显示<br> x:  显示所有程序，不以终端机来区分</p>
+<p>命令示例：</p>
+<pre><code> ps -e   #显示所有进程  
+ ps aux   #不区分终端，显示所有用户的所有进程
+ ps -ef   #显示所有进程的UID,PPIP,C与STIME栏位</code></pre><h3 id="ps-aux-grep-进程数（在所有进程下找目标进程）"><a href="#ps-aux-grep-进程数（在所有进程下找目标进程）" class="headerlink" title="ps -aux | grep 进程数（在所有进程下找目标进程）"></a>ps -aux | grep 进程数（在所有进程下找目标进程）</h3><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>命令格式：find [参数] [文件]<br>主要功能：用于查找特定文件<br>常用参数：<br>-name 查找具有指定文件名的文件<br>-perm 查找具有指定权限的文件<br>命令示例：</p>
+<pre><code>find /demo -name &#39;test&#39; #在demo目录下查找文件名test的文件
+find /demo -perm 755    #在demo目录下查找权限755的文件</code></pre><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p>命令格式：tar [参数] [文件]<br>主要功能：用来压缩和解压文件<br>常用参数：<br>-c 建立新的压缩文件<br>-x 从压缩中提取文件<br>-z 支持gzip解压文件<br>-v 显示操作过程<br>-f 指定压缩文件<br>命令示例：</p>
+<pre><code>tar -cvf test.tar test.txt   #将test.txt文件打包到test.tar文件中
+tar -xvzf test.tar.gzip /opt #将test.tar.gzip文件解压到opt目录下</code></pre><h3 id="unzip"><a href="#unzip" class="headerlink" title="unzip"></a>unzip</h3><p>命令格式：unzip [参数] [文件]<br>主要功能：用来压缩和解压文件<br>常用参数：<br>-r 建立新的压缩文件<br>-d 从压缩中提取文件<br>命令示例：</p>
+<pre><code>zip -r mydata.zip mydata #压缩mydata目录  压缩成 mydata.zip 文件
+unzip mydata.zip -d mydatabak #将文件mydata解压到mydatabak中去</code></pre><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>命令格式：touch [参数] [文件]<br>主要功能：更改文件时间戳或创建文件<br>常用参数：<br>-t 使用指定的日期时间，而非现在的时间<br>命令示例：</p>
+<pre><code>touch test.txt                    #创建test.txt文件
+touch -t \201012252230.30 log.log #为log.log文件指定新的时间戳</code></pre><h3 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h3><p>命令格式：whereis [参数] [文件或目录]<br>主要功能：是查找执行命令或程序所在的位置，及安装位置<br>常用参数：<br>-b 定位可执行文件<br>-s 定位源代码文件<br>命令示例：</p>
+<pre><code>[root@localhost ~]# whereis nginx
+nginx: /usr/sbin/nginx /etc/nginx /usr/share/nginx /usr/share/man/man3/nginx.3pm.gz</code></pre><h3 id="which"><a href="#which" class="headerlink" title="which"></a>which</h3><p>命令格式：which [可执行文件名称]<br>主要功能：搜索PATH变量中某个系统命令的位置<br>常用参数：无<br>命令示例：</p>
+<pre><code>which pwd #搜索pwd命令所在路径</code></pre><h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><p>命令格式：ping [参数] [主机名或IP地址]<br>主要功能：确定网络和各外部主机的状态<br>常用参数：<br>-c 在发送指定数目的包后停止<br>命令示例：</p>
+<pre><code>ping -c 10 127.0.0.1 #ping本地主机10次</code></pre><h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><p>命令格式：ifconfig [网络设备] [参数]<br>主要功能：查看和配置网络设备<br>常用参数：<br>-up 启动指定网络设备/网卡<br>-down 关闭指定网络设备/网卡<br>-a 显示全部接口信息<br>命令示例：</p>
+<pre><code>ifconfig eth0 up #启动网卡eth0
+ifconfig    #查看当前主机ip地址，常用
+(ipconfig 为windows，ifconfig为linux)</code></pre><h3 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h3><p>命令格式：chown [选项] [所有者][:[组]] [文件]<br>主要功能：改变文件的拥有者和群组<br>常用参数：<br>-R 处理指定目录以及其子目录下的所有文件<br>&lt;当前用户&gt;:&lt;当前群组&gt; 改变当前文件或目录的用户或群组<br>命令示例：</p>
+<pre><code>chown admin:group test.txt #改变test.txt文件的用户拥有者为admin,群组为group</code></pre><h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><p>命令格式：chmod [选项] [文件]<br>主要功能：用于改变文件或目录的访问权限<br>常用参数：<br>-R 处理指定目录以及其子目录下的所有文件<br>&lt;权限范围&gt;+&lt;权限设置&gt; 使权限范围内的目录或者文件具有指定的权限<br>&lt;权限范围&gt;-&lt;权限设置&gt; 删除权限范围的目录或者文件的指定权限<br>&lt;权限范围&gt;=&lt;权限设置&gt; 设置权限范围内的目录或者文件的权限为指定的值<br>注&lt;权限范围&gt;：<br>u ：目录或者文件的当前的用户<br>g ：目录或者文件的当前的群组<br>o ：除了目录或者文件的当前用户或群组之外的用户或者群组<br>a ：所有的用户及群组<br>命令示例：</p>
+<pre><code>chmod a+x test.txt #增加test.txt文件所有用户组可执行权限 
+chmod u=rwx g=rwx o=rwx test.txt
+chmod 777 test.txt</code></pre><h3 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h3><p>命令格式：jobs<br>主要功能：查看当前正在运行的任务<br>-l：显示进程号；<br>-p：仅任务对应的显示进程号；<br>-n：显示任务状态的变化；<br>-r：仅输出运行状态（running）的任务；<br>-s：仅输出停止状态（stoped）的任务。<br>命令示例：</p>
+<pre><code>[root@localhost ~]# ping localhost -a &gt;/dev/null &amp;
+[1] 1762
+[root@localhost ~]# ping 127.0.0.1 -a &gt;/dev/null &amp;
+[2] 1763
+[root@localhost ~]# jobs
+[1]-  运行中               ping localhost -a &gt; /dev/null &amp;
+[2]+  运行中               ping 127.0.0.1 -a &gt; /dev/null &amp;
+
+[root@localhost ~]# jobs -p   #查看进程号
+1762
+1763</code></pre><h3 id="bg"><a href="#bg" class="headerlink" title="bg%"></a>bg%</h3><p>命令格式：bg [作业标识号]<br>主要功能：将程序放到后台执行<br>常用参数：无<br>命令示例：</p>
+<pre><code>[root@localhost ~]# ping localhost -a &gt;/dev/null &amp;
+[1] 1762
+[root@localhost ~]# ping 127.0.0.1 -a &gt;/dev/null &amp;
+[2] 1763
+[root@localhost ~]# fg 1
+ping localhost -a &gt; /dev/null
+^Z
+[1]+  已停止               ping localhost -a &gt; /dev/null
+[root@localhost ~]# jobs
+[1]+  已停止               ping localhost -a &gt; /dev/null
+[2]-  运行中               ping 127.0.0.1 -a &gt; /dev/null &amp;
+[root@localhost ~]# bg 1 #将任务号为1的任务放到后台继续执行
+[1]+ ping localhost -a &gt; /dev/null &amp;
+[root@localhost ~]# jobs
+[1]-  运行中               ping localhost -a &gt; /dev/null &amp;
+[2]+  运行中               ping 127.0.0.1 -a &gt; /dev/null &amp;</code></pre><h3 id="fg"><a href="#fg" class="headerlink" title="fg%"></a>fg%</h3><p>命令格式：fg [作业标识号]<br>主要功能：将指定作业放到前台执行<br>常用参数：无<br>命令示例：</p>
+<pre><code>[root@localhost ~]# ping localhost -a &gt;/dev/null &amp;
+[1] 1762
+[root@localhost ~]# ping 127.0.0.1 -a &gt;/dev/null &amp;
+[2] 1763
+[root@localhost ~]# fg 1   #将任务号为1的任务放到前台继续执行
+ping localhost -a &gt; /dev/null
+^Z
+[1]+  已停止               ping localhost -a &gt; /dev/null
+[root@localhost ~]# jobs
+[1]+  已停止               ping localhost -a &gt; /dev/null
+[2]-  运行中               ping 127.0.0.1 -a &gt; /dev/null &amp; </code></pre><h3 id="nohub"><a href="#nohub" class="headerlink" title="nohub"></a>nohub</h3><p>命令格式：nohup Command &amp;<br>主要功能：不挂断地运行命令<br>常用参数：无<br>命令解析：<br>    如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，<br>那么可以使用nohup命令。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程<br>命令示例：</p>
+<pre><code>nohup ping -c 4 127.0.0.1 &amp; #后台运行ping命令</code></pre><h3 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h3><p>命令格式：useradd [参数] [用户账号]<br>主要功能：用于建立用户帐号<br>常用参数：<br>-d 指定用户登入时的启始目录<br>-g 指定用户所属群组<br>-m 自动建立用户的登入目录<br>-M 不要自动建立用户的登入目录<br>-u 指定用户ID<br>-r 建立系统账号<br>-s 指定用户登录后所使用的Shell<br>命令示例：</p>
+<pre><code>useradd demouser #添加用户demouser 默认自动添加使用者目录
+useradd -g demouser demogroup #为添加的用户指定相应的用户组 
+useradd -r demouser #创建系统用户demouser</code></pre><blockquote>
+<p>补充</p>
+</blockquote>
+<pre><code>    创建用户账户时，系统会自动创建该用户对应的主目录，
+该目录默认放在/home目录下.
+    若要改变位置，可以利用-d参数指定；对于用户登录时使用的shell，
+默认为/bin/bash，若要更改，则使用-s参数指定。
+    例如，若要创建一个名为vodup的账户，主目录放在/var目录下，
+并指定登录shell为/sbin/nologin，则操作命令为：
+[root@localhost ~]# useradd -d /var/vodup -s /sbin/nologin vodup
+[root@localhost ~]# tail -1 /etc/passwd
+vodup:x:503:503::/var/vodup:/sbin/nologin
+[root@localhost ~]# tail -1 /etc/group
+vodup:x:503:
+</code></pre><h3 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h3><p>命令格式：userdel [参数] [用户账号]<br>主要功能：用于删除用户帐号<br>常用参数：<br>-r 删除用户登入目录以及目录中所有文件<br>命令示例：</p>
+<pre><code>[root@Blackghost ~] userdel fxxk       #删除用户
+[root@Blackghost ~] userdel -r hao     #删除用户，并且删除用户home目录</code></pre><h3 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h3><p>命令格式：userdel [参数] [用户账号]<br>主要功能：修改使用者帐号<br>常用参数：<br>-a 把用户追加到某些组中，仅与-G选项一起使用<br>-d 更改用户目录<br>-e 加上使用者帐号停止日期。日期格式为MM/DD/YY.<br>-l 变更使用者login时的名称为login_name。<br>-L 锁定一个用户的帐号<br>-U 解锁一个用户的帐号.<br>命令示例：</p>
+<pre><code>[root@Blackghost ~] usermod -d /home/bak/ zhangying    #更改用户home目录
+[root@Blackghost ~] usermod -e 05/06/13 zhangying      #给用户加个有效期
+# usermod -G staff newuser2  #将 newuser2 添加到组 staff 中
+# usermod -l newuser1 newuser  #修改 newuser 的用户名为 newuser1
+# usermod -L newuser1          #锁定账号 newuser1
+# usermod -U newuser1          #解除对 newuser1 的锁定</code></pre><h3 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h3><p>命令格式：groupadd [参数] [用户账号]<br>主要功能：修改使用者帐号<br>常用参数：<br>-g 指定gid数值<br>命令示例：</p>
+<pre><code># groupadd mytest  #添加一个用户组
+# groupadd -g 444 test #添加一个用户组,并指定GID</code></pre><h3 id="groupdel"><a href="#groupdel" class="headerlink" title="groupdel"></a>groupdel</h3><p>命令格式：groupdel [参数] [用户账号]<br>主要功能：用于删除群组<br>常用参数：无<br>命令示例：</p>
+<pre><code>#  groupdel test   #删除组test</code></pre><h3 id="groupmod"><a href="#groupmod" class="headerlink" title="groupmod"></a>groupmod</h3><p>命令格式：groupmod [参数] [用户账号]<br>主要功能：修改群组<br>常用参数：<br>-g 指定gid数值<br>命令示例：</p>
+<pre><code># groupadd mytest  #添加一个用户组
+# groupadd -g 444 test #添加一个用户组,并指定GID</code></pre><h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><p>命令格式：passwd [参数] [用户账号]<br>主要功能：用来更改使用者密码<br>常用参数：<br>-d 删除密码<br>-f 强制执行<br>-l 停止账号使用<br>-u 启动停止账号<br>-g 修改群组密码<br>-S 显示用户密码<br>命令示例：</p>
+<pre><code>passwd demouser    #设置demouser用户密码
+passwd -S demouser #显示demouser用户密码
+passwd -d demouser #删除demouser用户密码
+passwd -l demouser #锁定demouser用户不能更改密码</code></pre><h3 id="newgrp"><a href="#newgrp" class="headerlink" title="newgrp"></a>newgrp</h3><p>命令格式：newgrp [组名]<br>主要功能：用于登入另一个群组<br>常用参数：无<br>命令示例：</p>
+<pre><code>newgrp root #改变当前用户群组为root组</code></pre><h3 id="whoami"><a href="#whoami" class="headerlink" title="whoami"></a>whoami</h3><p>命令格式：whoami [组名]<br>主要功能：查看当前用户名<br>常用参数：无<br>命令示例：</p>
+<pre><code>[root@localhost ~]# whoami  </code></pre><h2 id="2、附加命令"><a href="#2、附加命令" class="headerlink" title="2、附加命令"></a>2、附加命令</h2>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>linux基础 第三天 基础命令</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-28, 15:46:31</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-28, 20:38:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/28/北京渗透测试第三天 20190718/" title="linux基础 第三天 基础命令">http://yoursite.com/2019/07/28/北京渗透测试第三天 20190718/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 wang</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#linux基础考试','#安全术语','#渗透流程','#LAMP','#sqli-labs','#Dvwa','#学习计划','#静态网络配置','#html','#文件包含漏洞','#vpn','#linux根目录','#命令补充','#基础命令',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+</html>
