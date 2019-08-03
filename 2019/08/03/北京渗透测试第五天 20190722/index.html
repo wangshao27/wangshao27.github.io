@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>ssh安装 第五天 | 书剑阁</title>
+  <meta name="keywords" content=" sss , tomcat ">
+  <meta name="description" content="ssh安装 第五天 | 书剑阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:site_name" content="书剑阁">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-27T02:17:23.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="about">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>弈少</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2020471535&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(17)</small></div></li>
+    
+        
+            
+            <li><div data-rel="渗透"><i class="fold iconfont icon-right"></i>渗透<small>(15)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="第二周">第二周<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第一周">第一周<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第三周">第三周<small>(6)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="17">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://0xxk.github.io">0xxk</a></li>
+            
+            <li><a target="_blank" href="http://onezero.site">浮  鱼</a></li>
+            
+            <li><a target="_blank" href="http://conggeshizhendeshuai.github.io">王思聪</a></li>
+            
+            <li><a target="_blank" href="http://wanfeng98.cn">挽  风</a></li>
+            
+            <li><a target="_blank" href="https://evolyutsiya.github.io/">贾鹏程</a></li>
+            
+            <li><a target="_blank" href="http://linux.linuxidc.com">linux公社</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">LAMP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">安全术语</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">渗透流程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">大纲</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">linux基础考试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">sqli-labs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Dvwa</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">sss</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">tomcat</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">学习计划</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">静态网络配置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Jquery</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">js Bom</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">$_GET $_POST $_REQUEST</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">linux根目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">命令补充</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">css</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">js Dom</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">文件包含漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">基础命令</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/28/北京渗透测试第七天 20190724/"
+           data-tag="LAMP"
+           data-author="" >
+            <span class="post-title" title="环境搭建 第七天 LAMP">环境搭建 第七天 LAMP</span>
+            <span class="post-date" title="2019-07-28 23:17:09">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/27/北京渗透测试第一天 20190716/"
+           data-tag="安全术语,渗透流程"
+           data-author="" >
+            <span class="post-title" title="linux基础 第一天 安全术语">linux基础 第一天 安全术语</span>
+            <span class="post-date" title="2019-07-27 10:49:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/30/北京渗透测试第三周大纲及总结 20190730/"
+           data-tag="大纲,总结"
+           data-author="" >
+            <span class="post-title" title="第三周大纲及总结">第三周大纲及总结</span>
+            <span class="post-date" title="2019-07-30 22:58:05">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/30/北京渗透测试linux阶段考试 20190730/"
+           data-tag="linux基础考试"
+           data-author="" >
+            <span class="post-title" title="linux基础考试 第十一天 考试总结">linux基础考试 第十一天 考试总结</span>
+            <span class="post-date" title="2019-07-30 11:58:52">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/28/北京渗透测试第二周，周末 20190728/"
+           data-tag="sqli-labs,Dvwa"
+           data-author="" >
+            <span class="post-title" title="第二周末作业 sqli-labs Dvwa">第二周末作业 sqli-labs Dvwa</span>
+            <span class="post-date" title="2019-07-28 22:34:30">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/08/03/北京渗透测试第五天 20190722/"
+           data-tag="sss,tomcat"
+           data-author="" >
+            <span class="post-title" title="ssh安装 第五天">ssh安装 第五天</span>
+            <span class="post-date" title="2019-08-03 09:34:16">2019/08/03</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/08/03/北京渗透测试第六天 20190723/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="Centos git 第六天">Centos git 第六天</span>
+            <span class="post-date" title="2019-08-03 10:51:39">2019/08/03</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/27/北京渗透测试第二天 20190717/"
+           data-tag="学习计划,静态网络配置"
+           data-author="" >
+            <span class="post-title" title="linux基础 第二天 学习计划">linux基础 第二天 学习计划</span>
+            <span class="post-date" title="2019-07-27 15:48:46">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-27 10:11:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/30/北京渗透测试第十一天 20190730/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="html 第十一天 基础学习">html 第十一天 基础学习</span>
+            <span class="post-date" title="2019-07-30 20:25:08">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/08/01/北京渗透测试第十三天 20190801/"
+           data-tag="Jquery,js Bom"
+           data-author="" >
+            <span class="post-title" title="jQuery，jsBOM 第十三天 基础学习">jQuery，jsBOM 第十三天 基础学习</span>
+            <span class="post-date" title="2019-08-01 13:08:49">2019/08/01</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/08/02/北京渗透测试第十四天 20190802/"
+           data-tag="$_GET $_POST $_REQUEST"
+           data-author="" >
+            <span class="post-title" title="php：表单提交方法 第十四天">php：表单提交方法 第十四天</span>
+            <span class="post-date" title="2019-08-02 13:35:30">2019/08/02</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/28/北京渗透测试第四天 20190719/"
+           data-tag="linux根目录,命令补充"
+           data-author="" >
+            <span class="post-title" title="linux基础 第四天 linux根目录">linux基础 第四天 linux根目录</span>
+            <span class="post-date" title="2019-07-28 20:12:15">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/31/北京渗透测试第十二天 20190731/"
+           data-tag="css,js Dom"
+           data-author="" >
+            <span class="post-title" title="CSS、JS 第十二天 基础学习">CSS、JS 第十二天 基础学习</span>
+            <span class="post-date" title="2019-07-31 19:26:50">2019/07/31</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/29/北京渗透测试第十天 20190729/"
+           data-tag="文件包含漏洞,vpn"
+           data-author="" >
+            <span class="post-title" title="vpn和docker 第十天">vpn和docker 第十天</span>
+            <span class="post-date" title="2019-07-29 13:05:16">2019/07/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/永夜君王/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="永夜君王">永夜君王</span>
+            <span class="post-date" title="2019-07-27 10:11:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/28/北京渗透测试第三天 20190718/"
+           data-tag="基础命令"
+           data-author="" >
+            <span class="post-title" title="linux基础 第三天 基础命令">linux基础 第三天 基础命令</span>
+            <span class="post-date" title="2019-07-28 15:46:31">2019/07/28</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-北京渗透测试第五天 20190722" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">ssh安装 第五天</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="渗透">渗透</a>/
+            
+                <a href="javascript:" data-rel="第二周">第二周</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">sss</a>
+            
+            <a href="javascript:" class="color2">tomcat</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-08-03 10:50:45'>2019-08-03 09:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#渗透常用命令"><span class="toc-text">渗透常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat搭建"><span class="toc-text">Tomcat搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh配置"><span class="toc-text">ssh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat文件上传漏洞"><span class="toc-text">Tomcat文件上传漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PC端上传WEBSHELL"><span class="toc-text">PC端上传WEBSHELL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#补充"><span class="toc-text">补充</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="渗透常用命令"><a href="#渗透常用命令" class="headerlink" title="渗透常用命令"></a>渗透常用命令</h2><pre><code>linux 的查找命令
+
+whoami 查看当前用户
+tar 压缩和解压问价
+netstat 查看网络状态
+netstat -ano
+列出所有端口netstat -a|more</code></pre><p><img src="1.png" alt="网络状态"></p>
+<pre><code>windows下用netstat -a
+    nslookup 查看DNS信息
+    nslookp 域名DNS服务器</code></pre><p><img src="2.png" alt="windows"></p>
+<h2 id="Tomcat搭建"><a href="#Tomcat搭建" class="headerlink" title="Tomcat搭建"></a>Tomcat搭建</h2><pre><code>1、通过老师给的网址下载Tomcat.tar.gz
+网址：（http://apache.fayea.com/tomcat/tomcat-8/）</code></pre><pre><code>2、进入root权限（因找不到）
+    进入root权限home下找wang用户下的Downloads 的下载文件 </code></pre><p><img src="3.png" alt="找到文件"></p>
+<pre><code>3、在Downloads中解压：  tar zxvf tomcat.tar.gz</code></pre><p><img src="4.png" alt="解压"></p>
+<pre><code>4、在root用户下移动     mv apache-tomcat-8.5.43/ /usr/</code></pre><p><img src="5.png" alt="移动"></p>
+<pre><code>5、在apache-tomcat-8.5.43下进入conf 中
+    修改 server.xml 以及Tomcat-users.xml</code></pre><p><img src="6.png" alt="文件修改"></p>
+<pre><code>    目录调节到conf
+            cd /usr/tomcat/apache-tomcat-8.5.29/conf/
+            # 编辑server.xml文件
+            vi server.xml
+            # 键盘输入 i
+            #移动光标，修改&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; 
+            redirectPort=&quot;8443&quot; /&gt;中的8080为80</code></pre><p><img src="7.png" alt="端口修改"></p>
+<pre><code>6、修改完成后进入apache-tomcat-8.5.43下的bin文件找
+    ./startup.sh开启防火墙</code></pre><p><img src="8.png" alt="防火墙"></p>
+<pre><code>如不成功：则作如下修改：
+    systemctl start firewalld
+    #将80端口添加到防火墙另外并重启
+    firewall-cmd --zone=public --add-port=80/tcp --permanent
+    firewall-cmd --reload
+
+用systemctl status firewalld 查看防火墙状态</code></pre><p><img src="9.png" alt="firewalld状态"></p>
+<pre><code>7、进入本地浏览器firefox登入127.0.0.1看到如下页面表示成功：</code></pre><p><img src="10.png" alt="进入后台"></p>
+<pre><code>8、修改后台登录密码:</code></pre><p><img src="11.png" alt="密码修改"></p>
+<pre><code>解释：
+
+修改 (linux) /放文件的文件夹/tomcat/conf/tomcat-users.xml文件，在tomcat-users标签中添加如下内容：
+
+&lt;tomcat-users xmlns=&quot;http://tomcat.apache.org/xml&quot; 
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+xsi:schemaLocation=&quot;http://tomcat.apache.org/xml tomcat-users.xsd&quot; 
+version=&quot;1.0&quot;&gt; 
+&lt;role rolename=&quot;manager-gui&quot;/&gt; 
+&lt;role rolename=&quot;admin-gui&quot;/&gt; 
+&lt;user username=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;manager-gui,admin-gui&quot;/&gt; 
+&lt;/tomcat-users&gt; 
+修改完毕后,手动重启tomcat.启动
+方法: 
+1) 停止服务器 sudo ./shutdown.sh 
+2) 稍等至服务器彻底停掉,大约30秒后
+3) 输入启动命令:sudo ./startup.sh</code></pre><p><img src="12.png" alt="修改后"></p>
+<pre><code>9、修改成功后登入后台如下：</code></pre><p><img src="13.png" alt="登录页面"></p>
+<h2 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h2><pre><code>    apt-get install ssh 安装
+修改文件 vim /etc/ssh/sshd_config</code></pre><p><img src="14.png" alt="跨行"></p>
+<pre><code>开启命令：
+/etc/init.d/ssh start
+
+或service ssh start</code></pre><pre><code>查看服务命令：
+
+/etc/init.d/ssh status
+
+或 service ssh status
+</code></pre><p><img src="15.png" alt="状态命令"></p>
+<pre><code>停止服务命令 ： /etc/init.d/ssh stop  
+或者 service ssh stop
+
+如果出现ssh拒绝服务，请在输入密码修改
+：vim /etc/ssh/sshd_config
+下的：</code></pre><p><img src="16.png" alt="修改图片"></p>
+<h2 id="Tomcat文件上传漏洞"><a href="#Tomcat文件上传漏洞" class="headerlink" title="Tomcat文件上传漏洞"></a>Tomcat文件上传漏洞</h2><pre><code>    如果PC端连接Tomcat服务器出现403：
+修改 ./apache-tomcat-8.5.43/webapps/manager/META-INF/context.xml 允许外网上传文件</code></pre><p><img src="18.png" alt="联网失败"></p>
+<pre><code>allow=”\d+.\d+.\d+.\d+” 正则表达式，筛选出IP地址</code></pre><h3 id="PC端上传WEBSHELL"><a href="#PC端上传WEBSHELL" class="headerlink" title="PC端上传WEBSHELL"></a>PC端上传WEBSHELL</h3><pre><code>1、进入Tomcat后台管理系统，找到下属界面</code></pre><p><img src="19.png" alt="上传界面"></p>
+<pre><code>    选择编写的webshell上传
+    3、查看WebShell源码确定登陆密码，刷新页面，进入上传得文件内</code></pre><p><img src="20.png" alt></p>
+<pre><code>此漏洞的关闭方法：
+虚拟机执行 usermod -s /sbin/nologin git 目的是修改passwd文件中用户的 /bin/bash 可执行目录，nologin是不运行用户登录。</code></pre><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><pre><code>    今天Ubuntu添加root用户后，xshell使用root用户连接
+Ubuntu服务器提示拒绝了密码</code></pre><p><img src="17.webp" alt="错误显示"></p>
+<pre><code>解决方法：
+    查找方法后在Ubuntu系统中修改：vi /etc/ssh/sshd_config
+    在文件中找到下方信息：
+    # Authenticaton
+    LoginGraceTime 120
+    PremitRootLogin without passwd
+    StrictModes yes
+    内容修改为：
+    # Authenticaton
+    LoginGraceTime 120
+    PremitRootLogin yes    # 看修改为“yes”
+    StrictModes yes
+    重启ssh服务：/etc/init.d/ssh restart       
+    # 使用root用户远程登录则登录成功
+修改config后 service restart  ssh</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>ssh安装 第五天</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-03, 09:34:16</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-03, 10:50:45</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/03/北京渗透测试第五天 20190722/" title="ssh安装 第五天">http://yoursite.com/2019/08/03/北京渗透测试第五天 20190722/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 wang</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#LAMP','#安全术语','#渗透流程','#大纲','#总结','#linux基础考试','#sqli-labs','#Dvwa','#sss','#tomcat','#git','#学习计划','#静态网络配置','#html','#Jquery','#js Bom','#$_GET $_POST $_REQUEST','#linux根目录','#命令补充','#css','#js Dom','#文件包含漏洞','#vpn','#基础命令',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+</html>
