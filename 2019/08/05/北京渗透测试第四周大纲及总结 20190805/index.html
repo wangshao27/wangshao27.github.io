@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>php：渗透测试第四周大纲及总结 | 书剑阁</title>
+  <meta name="keywords" content=" 大纲及总结 ">
+  <meta name="description" content="php：渗透测试第四周大纲及总结 | 书剑阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:site_name" content="书剑阁">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-27T02:17:23.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="about">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>弈少</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2020471535&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(21)</small></div></li>
+    
+        
+            
+            <li><div data-rel="渗透"><i class="fold iconfont icon-right"></i>渗透<small>(19)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="第三周">第三周<small>(7)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第二周">第二周<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第一周">第一周<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="第四周">第四周<small>(3)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="21">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://0xxk.github.io">0xxk</a></li>
+            
+            <li><a target="_blank" href="http://onezero.site">浮  鱼</a></li>
+            
+            <li><a target="_blank" href="http://conggeshizhendeshuai.github.io">王思聪</a></li>
+            
+            <li><a target="_blank" href="http://wanfeng98.cn">挽  风</a></li>
+            
+            <li><a target="_blank" href="https://evolyutsiya.github.io/">贾鹏程</a></li>
+            
+            <li><a target="_blank" href="http://linux.linuxidc.com">linux公社</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">sqli_labs学习</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">LAMP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">大纲</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">linux基础考试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">sss</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">tomcat</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">sqli-labs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Dvwa</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">学习计划</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">静态网络配置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Jquery</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">js Bom</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">css</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">js Dom</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">运算符</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">for foreach  while</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">$_GET $_POST $_REQUEST</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">安全术语</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">渗透流程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">文件包含漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">linux根目录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">命令补充</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">大纲及总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">基础命令</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="渗透 第三周 "
+           href="/2019/08/03/mysql注入/"
+           data-tag="sqli_labs学习"
+           data-author="" >
+            <span class="post-title" title="php：mysql注入 第十四天">php：mysql注入 第十四天</span>
+            <span class="post-date" title="2019-08-03 19:09:39">2019/08/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-27 10:11:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/28/北京渗透测试第七天 20190724/"
+           data-tag="LAMP"
+           data-author="" >
+            <span class="post-title" title="环境搭建 第七天 LAMP">环境搭建 第七天 LAMP</span>
+            <span class="post-date" title="2019-07-28 23:17:09">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/30/北京渗透测试第三周大纲及总结 20190730/"
+           data-tag="大纲,总结"
+           data-author="" >
+            <span class="post-title" title="第三周大纲及总结">第三周大纲及总结</span>
+            <span class="post-date" title="2019-07-30 22:58:05">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/30/北京渗透测试linux阶段考试 20190730/"
+           data-tag="linux基础考试"
+           data-author="" >
+            <span class="post-title" title="linux基础考试 第十一天 考试总结">linux基础考试 第十一天 考试总结</span>
+            <span class="post-date" title="2019-07-30 11:58:52">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/08/03/北京渗透测试第五天 20190722/"
+           data-tag="sss,tomcat"
+           data-author="" >
+            <span class="post-title" title="ssh安装 第五天">ssh安装 第五天</span>
+            <span class="post-date" title="2019-08-03 09:34:16">2019/08/03</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/07/28/北京渗透测试第二周，周末 20190728/"
+           data-tag="sqli-labs,Dvwa"
+           data-author="" >
+            <span class="post-title" title="第二周末作业 sqli-labs Dvwa">第二周末作业 sqli-labs Dvwa</span>
+            <span class="post-date" title="2019-07-28 22:34:30">2019/07/28</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/27/北京渗透测试第二天 20190717/"
+           data-tag="学习计划,静态网络配置"
+           data-author="" >
+            <span class="post-title" title="linux基础 第二天 学习计划">linux基础 第二天 学习计划</span>
+            <span class="post-date" title="2019-07-27 15:48:46">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第二周 "
+           href="/2019/08/03/北京渗透测试第六天 20190723/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="Centos git 第六天">Centos git 第六天</span>
+            <span class="post-date" title="2019-08-03 10:51:39">2019/08/03</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/08/01/北京渗透测试第十三天 20190801/"
+           data-tag="Jquery,js Bom"
+           data-author="" >
+            <span class="post-title" title="jQuery，jsBOM 第十三天 基础学习">jQuery，jsBOM 第十三天 基础学习</span>
+            <span class="post-date" title="2019-08-01 13:08:49">2019/08/01</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/30/北京渗透测试第十一天 20190730/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="html 第十一天 基础学习">html 第十一天 基础学习</span>
+            <span class="post-date" title="2019-07-30 20:25:08">2019/07/30</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/31/北京渗透测试第十二天 20190731/"
+           data-tag="css,js Dom"
+           data-author="" >
+            <span class="post-title" title="CSS、JS 第十二天 基础学习">CSS、JS 第十二天 基础学习</span>
+            <span class="post-date" title="2019-07-31 19:26:50">2019/07/31</span>
+        </a>
+        
+        <a  class="渗透 第四周 "
+           href="/2019/08/05/北京渗透测试第十五天 20190805/"
+           data-tag="运算符"
+           data-author="" >
+            <span class="post-title" title="php：运算符基础 第十五天">php：运算符基础 第十五天</span>
+            <span class="post-date" title="2019-08-05 11:38:24">2019/08/05</span>
+        </a>
+        
+        <a  class="渗透 第四周 "
+           href="/2019/08/06/北京渗透测试第十六天 20190806/"
+           data-tag="for foreach  while"
+           data-author="" >
+            <span class="post-title" title="php：循环运算 第十六天">php：循环运算 第十六天</span>
+            <span class="post-date" title="2019-08-06 12:39:29">2019/08/06</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/08/02/北京渗透测试第十四天 20190802/"
+           data-tag="$_GET $_POST $_REQUEST"
+           data-author="" >
+            <span class="post-title" title="php：表单提交方法 第十四天">php：表单提交方法 第十四天</span>
+            <span class="post-date" title="2019-08-02 13:35:30">2019/08/02</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/27/北京渗透测试第一天 20190716/"
+           data-tag="安全术语,渗透流程"
+           data-author="" >
+            <span class="post-title" title="linux基础 第一天 安全术语">linux基础 第一天 安全术语</span>
+            <span class="post-date" title="2019-07-27 10:49:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第三周 "
+           href="/2019/07/29/北京渗透测试第十天 20190729/"
+           data-tag="文件包含漏洞,vpn"
+           data-author="" >
+            <span class="post-title" title="vpn和docker 第十天">vpn和docker 第十天</span>
+            <span class="post-date" title="2019-07-29 13:05:16">2019/07/29</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/28/北京渗透测试第四天 20190719/"
+           data-tag="linux根目录,命令补充"
+           data-author="" >
+            <span class="post-title" title="linux基础 第四天 linux根目录">linux基础 第四天 linux根目录</span>
+            <span class="post-date" title="2019-07-28 20:12:15">2019/07/28</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/永夜君王/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="永夜君王">永夜君王</span>
+            <span class="post-date" title="2019-07-27 10:11:28">2019/07/27</span>
+        </a>
+        
+        <a  class="渗透 第四周 "
+           href="/2019/08/05/北京渗透测试第四周大纲及总结 20190805/"
+           data-tag="大纲及总结"
+           data-author="" >
+            <span class="post-title" title="php：渗透测试第四周大纲及总结">php：渗透测试第四周大纲及总结</span>
+            <span class="post-date" title="2019-08-05 22:04:24">2019/08/05</span>
+        </a>
+        
+        <a  class="渗透 第一周 "
+           href="/2019/07/28/北京渗透测试第三天 20190718/"
+           data-tag="基础命令"
+           data-author="" >
+            <span class="post-title" title="linux基础 第三天 基础命令">linux基础 第三天 基础命令</span>
+            <span class="post-date" title="2019-07-28 15:46:31">2019/07/28</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-北京渗透测试第四周大纲及总结 20190805" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">php：渗透测试第四周大纲及总结</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="渗透">渗透</a>/
+            
+                <a href="javascript:" data-rel="第四周">第四周</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">大纲及总结</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-08-06 21:19:10'>2019-08-05 22:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第四周周一-20190805"><span class="toc-text">第四周周一   20190805</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四周周二-20190806"><span class="toc-text">第四周周二   20190806</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第四周周一-20190805"><a href="#第四周周一-20190805" class="headerlink" title="第四周周一   20190805"></a>第四周周一   20190805</h3><pre><code>    1、上午介绍php的基本运算符，逻辑运算符，php算术运算符，php递增/递减运算符，php比较运算符，三元运算符，错误控制运算符
+
+    2、介绍在渗透测试过程中，可能用到的php函数：
+
+        addslashes(); // &#39; &quot; 空 \   前 添加\   ni hao &#39;zs&#39; ! ==&gt; ni hao                 \&#39;zs\&#39; !   转义特殊字符，防御sql注入。
+
+        bin2hex(&quot;\n&quot;); // ascii码  计算ascii码
+
+        chr(0x0a);  //十六进制换成文字
+
+        crypt(&#39;password&#39;, &#39;admin&#39;);  // 加密函数
+
+        md5(&#39;password&#39;);  // md5 hash计算
+
+        explode(&#39;.&#39;, $filename); // title   php   jpg          
+        根据提供的字符，来切割字符串，结果是一个数组            
+
+        htmlspecialchars($payload); // &#39; &quot; &lt;  &gt; &amp;  转义特殊字符为html实体编码，防御xss
+
+        implode(&#39;.&#39;, $ext);  // 讲一个数组合并为字符串，可以提供连接字符
+
+        str_ireplace(&#39;ABc&#39;, &#39;hello&#39;, &#39;abc zs!&#39;);  // 不区分大小写，替换字符串
+
+        strcmp(&quot;Hello world!&quot;,&quot;Hello world?&quot;);   // 比较字符串，区分大消息，二进制安全，相同结果为0
+
+        strlen($a);   // 计算字符串长度
+
+        substr(&quot;Hello World !&quot;,0, 5);  // 字符串截取，按照`位`截取
+
+        mb_substr(&quot;abc你好!菜鸟！&quot;,0, 4);   // 字符串截取，按照`字`截取
+</code></pre><h3 id="第四周周二-20190806"><a href="#第四周周二-20190806" class="headerlink" title="第四周周二   20190806"></a>第四周周二   20190806</h3><pre><code>1、上午讲述for，switch，while循环
+2、php基本游戏网站：https://www.codingame.com
+    成绩输出代码讲解，水花仙树代码书写，
+    数组的创建，赋值，在创建循环遍历，  </code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>php：渗透测试第四周大纲及总结</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-05, 22:04:24</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-06, 21:19:10</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/05/北京渗透测试第四周大纲及总结 20190805/" title="php：渗透测试第四周大纲及总结">http://yoursite.com/2019/08/05/北京渗透测试第四周大纲及总结 20190805/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 wang</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#sqli_labs学习','#LAMP','#大纲','#总结','#linux基础考试','#sss','#tomcat','#sqli-labs','#Dvwa','#学习计划','#静态网络配置','#git','#Jquery','#js Bom','#html','#css','#js Dom','#运算符','#for foreach  while','#$_GET $_POST $_REQUEST','#安全术语','#渗透流程','#文件包含漏洞','#vpn','#linux根目录','#命令补充','#大纲及总结','#基础命令',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+</html>
