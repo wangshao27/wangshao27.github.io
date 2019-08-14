@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>php：循环运算 第十七天 | 书剑阁</title>
-  <meta name="keywords" content=" 数组函数 ">
-  <meta name="description" content="php：循环运算 第十七天 | 书剑阁">
+  <title>select关键词 第二十一天 | 书剑阁</title>
+  <meta name="keywords" content=" 关键词 ">
+  <meta name="description" content="select关键词 第二十一天 | 书剑阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -788,9 +788,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-北京渗透测试第十七天 20190807" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-select中的关键词" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">php：循环运算 第十七天</h1>
+        <h1 class="article-title">select关键词 第二十一天</h1>
     
     <div class="article-meta">
         
@@ -800,21 +800,21 @@
             
                 <a href="javascript:" data-rel="渗透">渗透</a>/
             
-                <a href="javascript:" data-rel="第四周">第四周</a>
+                <a href="javascript:" data-rel="第五周">第五周</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">数组函数</a>
+            <a href="javascript:" class="color4">关键词</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-07 22:08:50'>2019-08-07 08:59</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-13 14:09:37'>2019-08-13 09:10</time>
         
     </div>
     <div class="article-meta">
@@ -836,7 +836,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、数组相关函数"><span class="toc-text">1、数组相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#count-别名sizeof"><span class="toc-text">count(别名sizeof)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-keys"><span class="toc-text">array_keys()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-values"><span class="toc-text">array_values</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-merge-也可用于加号代替："><span class="toc-text">array_merge(也可用于加号代替：+)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的数组函数"><span class="toc-text">常见的数组函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php函数工作流程"><span class="toc-text">php函数工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种-传参，无返回值的函数形式"><span class="toc-text">第二种 传参，无返回值的函数形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三种-无参，无返回"><span class="toc-text">第三种 无参，无返回</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php文件函数"><span class="toc-text">php文件函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见文件函数"><span class="toc-text">常见文件函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#basename"><span class="toc-text">basename()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#copy"><span class="toc-text">copy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dirname"><span class="toc-text">dirname()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fflush"><span class="toc-text">fflush()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file-exists"><span class="toc-text">file_exists()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file-get-contents"><span class="toc-text">file_get_contents()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用函数"><span class="toc-text">常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fopen"><span class="toc-text">fopen()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fgets"><span class="toc-text">fgets</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fread"><span class="toc-text">fread()</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#select基础应用"><span class="toc-text">select基础应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-拼接字符"><span class="toc-text">concat 拼接字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切割符-left-right-mid-substr-substring"><span class="toc-text">切割符(left,right,mid,substr,substring)</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -851,171 +851,68 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、数组相关函数"><a href="#1、数组相关函数" class="headerlink" title="1、数组相关函数"></a>1、数组相关函数</h2><h3 id="count-别名sizeof"><a href="#count-别名sizeof" class="headerlink" title="count(别名sizeof)"></a>count(别名sizeof)</h3><pre><code> 统计数组内的个数，主要应用于for循环输出如：
- &lt;?php
-    $arr=[1,2,3,45,];
-    for($i=0;$i&lt;count($arr);$i++){
-        echo $arr[$i];
-    }
- ?&gt;</code></pre><h3 id="array-keys"><a href="#array-keys" class="headerlink" title="array_keys()"></a>array_keys()</h3><pre><code>语法：
-array_keys(array,value,strict)
+        <h2 id="select基础应用"><a href="#select基础应用" class="headerlink" title="select基础应用"></a>select基础应用</h2><pre><code>select 相当于php中的echo;
 
-array : 必须。规定数组；
+select version();  数据库版本
+或者
+select @@version;  获得数据库版本
 
-value : 可选，您可以指定键值，然后只有该键值对应的键名会被返回
+查看当前用户
+select user(); 当前连接的数据库，以及ip
 
-strict: 可选，与 value 参数一起使用。可能的值：
-                true - 返回带有指定键值的键名。依赖类型，数字 5 与字符串 &quot;5&quot; 是不同的。
-                false - 默认值。不依赖类型，数字 5 与字符串 &quot;5&quot; 是相同的。
+查看当前数据库
+select database(); 查看当前的数据库</code></pre><p>select concat() from ‘test’.’content’</p>
+<h3 id="concat-拼接字符"><a href="#concat-拼接字符" class="headerlink" title="concat 拼接字符"></a>concat 拼接字符</h3><pre><code>select concat(1,2,4,5,7,8);
 
-菜鸟实例：
-&lt;?php
-$a=array(&quot;Volvo&quot;=&gt;&quot;XC90&quot;,&quot;BMW&quot;=&gt;&quot;X5&quot;,&quot;Toyota&quot;=&gt;&quot;Highlander&quot;);
-print_r(array_keys($a,&quot;Highlander&quot;));
-?&gt;
+select concat(1,&#39;~&#39;,2,&#39;~&#39;,4,5,7,8);
 
-    可用于关联数组到索引数组间的转换；</code></pre><h3 id="array-values"><a href="#array-values" class="headerlink" title="array_values"></a>array_values</h3><pre><code>  array_values() 函数返回包含数组中所有的值的数组。</code></pre><h3 id="array-merge-也可用于加号代替："><a href="#array-merge-也可用于加号代替：" class="headerlink" title="array_merge(也可用于加号代替：+)"></a>array_merge(也可用于加号代替：+)</h3><pre><code>array_merge() 函数用于把一个或多个数组合并为一个数组。
+select concat(&#39;username&#39;,&#39;~&#39;,&#39;password&#39;) from &#39;test&#39;.&#39;content&#39;
 
-应用实例:
-&lt;?php
-    $a1=array(&quot;a&quot;=&gt;&quot;red&quot;,&quot;b&quot;=&gt;&quot;green&quot;);
-    $a2=array(&quot;c&quot;=&gt;&quot;blue&quot;,&quot;b&quot;=&gt;&quot;yellow&quot;);
-    print_r(array_merge($a1,$a2));
-?&gt;</code></pre><h3 id="常见的数组函数"><a href="#常见的数组函数" class="headerlink" title="常见的数组函数"></a>常见的数组函数</h3><pre><code>1、array_key_exists(&#39;&#39;addr&#39;,$arr) 判断addr是否在数组$arr中输出为布尔型
-2、array_pop($a),删除数组中的最后一个。在原有的基础上删掉一个
-3、arsort($arr) 通过键值对对数组进行降序排序，
-4、asort($arr) 通过键值对数组进行升序排序，
-5、krsort($arr) 通过键对对数组进行逆序排序，
-6、ksort($arr) 通过键对数组进行升序排序
-7、in_array(&#39;Mark&#39;,$arr); 判断一个元素是否在数组当中
-8、key($arr); 一次取一个键名，个for循环搭配，取出全部</code></pre><h3 id="php函数工作流程"><a href="#php函数工作流程" class="headerlink" title="php函数工作流程"></a>php函数工作流程</h3><pre><code>1、接收数据
-2、处理数据
-3、将数据返回，只返回一次数据，不能同时返回两行
+select group_concat(1,&#39;~&#39;,2,&#39;~&#39;,4,5,7,8);
 
-应用实例：
-function chulishuju(接收数据){
-    处理数据
-    返回处理的数据
-}
+group_concat 和concat的区别，系统版本不同，函数用法有些区别
 
-function adds($addr){
-    $addr = addslashes($addr);
-    return $addr;
-}
-$result = adds($addr);
-现实实例：
 
-function  num($num1 ,$num2){
-    $he=$num1+$num2;
-    $ji=$num1*$num2;
-    $cha =$num1 - $num2;
-    $shang=$num1 / $num2;
-    $yushu=$num1 % $num2;
-    $all = array(
-        &#39;he&#39; =&gt; $he,
-        &#39;ji&#39; =&gt; $ji,
-        &#39;cha&#39;=&gt; $cha,
-        &#39;shang&#39;=&gt;$shang,
-        &#39;yushu&#39;=&gt;$yushu
-    );
-    return $all;
-}
+注意：concat内的字段加单引号， </code></pre><p><img src="1.png" alt="concat效果"></p>
+<h3 id="切割符-left-right-mid-substr-substring"><a href="#切割符-left-right-mid-substr-substring" class="headerlink" title="切割符(left,right,mid,substr,substring)"></a>切割符(left,right,mid,substr,substring)</h3><pre><code></code></pre><p> concat()</p>
+<p>实例：<br>select concat(1,2,4,5,7,8);</p>
+<p>select concat(1,’<del>‘,2,’</del>‘,4,5,7,8);</p>
+<p>select concat(‘username’,’~’,’password’) from ‘test’.’content’</p>
+<p>select group_concat(1,’<del>‘,2,’</del>‘,4,5,7,8);</p>
+<p>group_concat 和concat的区别，系统版本不同，函数用法有些区别</p>
+<p> group_concat()</p>
+<p> 把查询结果连接起来</p>
+<p> 切割字符字符关键词：</p>
+<p>mysql中下标是从一开始的<br> left </p>
+<p> select left(‘hello world!’,5);<br> 从左开始取五位<br>select right(hello world!’,5);<br>从右开始取五位</p>
+<p>select mid(‘sello world’,10,5)</p>
+<p>从下标为10开始取五位</p>
+<p>select substr(‘sello world’,10,5)</p>
+<p>从下标为10开始取五位</p>
+<p>select substring(‘sello world’,10,5)</p>
+<p>从下标为10开始取五位</p>
+<p>select mid(concat(<code>username</code>,’~’,<code>password</code>),1,20) from ‘test’=’users’;</p>
+<p>select 0x7e;  十六进制，波浪线</p>
+<p>select 0x3d; 十六进制</p>
+<p>select mid(concat(<code>username</code>,0x7e,<code>password</code>),1,20) from ‘test’=’users’;</p>
+<p>十六进制转换；</p>
+<p>select hex(admin);</p>
+<p>只有单引号 双引号引起来的数据可以转换十六</p>
+<p>进制</p>
+<p>/**/注释</p>
+<p>distincf</p>
+<p>order by</p>
+<p>select <code>username</code>,<code>passwd</code> from <code>test</code>.<code>users</code> order by 1; 1指向查询结果的第一列；</p>
+<p>select <code>username</code>,<code>passwd</code> from <code>test</code>.<code>users</code> order by 2; 2指向查询结果的第二列；</p>
+<p>字符串的排序以首字符在字符表中的位置开始算起</p>
+<p>limit</p>
+<p>select <code>username</code>,<code>passwd</code> from <code>test</code>.<code>users</code> limit 0,2; 1指向查询结果的第一列；</p>
+<p>从下标为0开始取两行数据</p>
+<p>union select 联合查询的命令  前后列数相当， 前后查询同时输出</p>
+<p>select <code>username</code>,<code>passwd</code> from <code>test</code>.<code>users</code> union select 1，5; </p>
+<p>select 1，2，3，4，5，6 union select 6，5，4，user(),database(),version();limit 0.2;</p>
+<p>select username.passwd from test.users where username=’admin’ union select 1,vaersion();</p>
 
-$result = num(7,8);
-foreach($result as $key=&gt;$value){
-    echo $key.&#39;is&#39;.$value.&quot;\n&quot;;
-}</code></pre><h3 id="第二种-传参，无返回值的函数形式"><a href="#第二种-传参，无返回值的函数形式" class="headerlink" title="第二种 传参，无返回值的函数形式"></a>第二种 传参，无返回值的函数形式</h3><pre><code>应用实例：
-function safe_echo($str){
-
-    echo htmlspecialchars($str);
-
-}
-
-$data = &quot;&lt;script&gt;alert(1)&lt;/script&gt;&quot;;
-safe_echo($data);</code></pre><h3 id="第三种-无参，无返回"><a href="#第三种-无参，无返回" class="headerlink" title="第三种 无参，无返回"></a>第三种 无参，无返回</h3><pre><code>function safe_info(){
-    echo  PHP_VERSION;
-    echo PHP_OS;
-}
-safe_info();</code></pre><h2 id="php文件函数"><a href="#php文件函数" class="headerlink" title="php文件函数"></a>php文件函数</h2><h3 id="常见文件函数"><a href="#常见文件函数" class="headerlink" title="常见文件函数"></a>常见文件函数</h3><h3 id="basename"><a href="#basename" class="headerlink" title="basename()"></a>basename()</h3><pre><code>1、basename() 函数返回路径中的文件名部分。
-应用实例：
-&lt;?php
-$path = &quot;/testweb/home.php&quot;;
-
-//Show filename with file extension
-echo basename($path) .&quot;&lt;br/&gt;&quot;;
-
-//Show filename without file extension
-echo basename($path,&quot;.php&quot;);
-?&gt;
-</code></pre><h3 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h3><pre><code>2、copy 复制文件
-应用实例：
-&lt;?php
-echo copy(&quot;source.txt&quot;,&quot;target.txt&quot;);
-?&gt;</code></pre><h3 id="dirname"><a href="#dirname" class="headerlink" title="dirname()"></a>dirname()</h3><pre><code>3.dirname() 函数返回路径中的目录名称部分。
-应用实例：
-&lt;?php
-echo dirname(&quot;c:/testweb/home.php&quot;) . &quot;&lt;br /&gt;&quot;;
-echo dirname(&quot;/testweb/home.php&quot;);
-?&gt;
-输出
-c:/testweb
-/testweb</code></pre><h3 id="fflush"><a href="#fflush" class="headerlink" title="fflush()"></a>fflush()</h3><pre><code>4、fflush() 函数向打开的文件写入所有的缓冲输出。如果成功则返回          TRUE，如果失败则返回 FALSE。
-应用实例：
-&lt;?php
-$file = fopen(&quot;test.txt&quot;,&quot;r+&quot;);
-// some code
-fflush($file);
-?&gt;</code></pre><h3 id="file-exists"><a href="#file-exists" class="headerlink" title="file_exists()"></a>file_exists()</h3><pre><code>file_exists() 函数检查文件或目录是否存在。
-如果指定的文件或目录存在则返回 TRUE，否则返回 FALSE。
-
-应用实例：
-&lt;?php
-echo file_exists(&quot;test.txt&quot;);
-?&gt;</code></pre><h3 id="file-get-contents"><a href="#file-get-contents" class="headerlink" title="file_get_contents()"></a>file_get_contents()</h3><pre><code>    file_get_contents() 把整个文件读入一个字符串中。
-该函数是用于把文件的内容读入到一个字符串中的首选方法。如果服务器操作系统支持，还会使用内存映射技术来增强性能。
-应用实例：
-&lt;?php
-echo file_get_contents(&quot;test.txt&quot;);
-?&gt;
-输出：test.txt的内容</code></pre><pre><code>filesize() 函数返回指定文件的大小。
-filetype() 函数返回指定文件或目录的类型。
-fread()    函数读取打开的文件。
-is_dir()   函数检查指定的文件是否是一个目录。
-is_file()  函数检查指定的文件是否是常规的文件
-mkdir()    函数创建目录。
-rename()   函数重命名文件或目录。
-unlink()   函数删除文件。
-rmdir()    函数删除空的目录。</code></pre><h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><h4 id="fopen"><a href="#fopen" class="headerlink" title="fopen()"></a>fopen()</h4><pre><code>fopen(),函数打开一个文件或 URL;
-语法：
-fopen(filename,mode,include_path,context)
-
-filename   必须，规定打开的而文件或URL
-
-mode  必须，规定请求到该文件的访问类型：
-        &quot;r&quot; （只读方式打开，将文件指针指向文件头）
-        &quot;r+&quot; （读写方式打开，覆盖式写入）
-        &quot;w&quot; （写入方式打开，清除文件内容，如果文件不存在则尝试创建之）
-        &quot;w+&quot; （读写方式打开，清除文件内容，如果文件不存在则尝试创建之）
-        &quot;a&quot; （写入方式打开，将文件指针指向文件末尾进行写入，如果文件不存在则尝试创建之）
-        &quot;a+&quot; （读写方式打开，通过将文件指针指向文件末尾进行写入来保存文件内容）
-        &quot;x&quot; （创建一个新的文件并以写入方式打开，如果文件已存在则返回 FALSE 和一个错误）
-        &quot;x+&quot; （创建一个新的文件并以读写方式打开，如果文件已存在则返回 FALSE 和一个错误）
-</code></pre><h4 id="fgets"><a href="#fgets" class="headerlink" title="fgets"></a>fgets</h4><pre><code>    fgets() 函数从打开的文件中返回一行。
-语法：
-   fgets(file,length)
-应用实例：
-&lt;?php
-$file = fopen(&quot;test.txt&quot;,&quot;r&quot;);
-echo fgets($file);
-fclose($file);
-?&gt;</code></pre><h4 id="fread"><a href="#fread" class="headerlink" title="fread()"></a>fread()</h4><pre><code>fread()函数读取打开的文件
-语法：
-string fread ( resource $handle , int $length )
-应用实例：
-$file = fopen(&quot;test.txt&quot;,&quot;r&quot;);
-$contents = fread($file,filesize(&quot;test.txt&quot;));
-fclose($file);
-?&gt;</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zhumeng512@qq.com </span>
     </div>
@@ -1028,12 +925,12 @@ fclose($file);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>php：循环运算 第十七天</p>
+    <p><span class="copy-title">文章标题:</span>select关键词 第二十一天</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="弈少">弈少</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-07, 08:59:33</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-07, 22:08:50</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/07/北京渗透测试第十七天 20190807/" title="php：循环运算 第十七天">http://yoursite.com/2019/08/07/北京渗透测试第十七天 20190807/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-13, 09:10:56</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-13, 14:09:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/13/select中的关键词/" title="select关键词 第二十一天">http://yoursite.com/2019/08/13/select中的关键词/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
